@@ -1,7 +1,7 @@
 {
-  "version": "0.1.0",
-  "released": "2026-10-30",
-  "notes": "First pilot version of Atlas for Windows.",
-  "file": "downloads/Atlas-Setup-0.1.0.exe",
-  "size": ""
+    "version":  "0.1.0",
+    "released":  "2026-10-30",
+    "notes":  "First pilot version of Atlas for Windows.",
+    "size":  "",
+    "file":  "https://github.com/lennexpo/atlas-releases/releases/download/v0.1.0/Atlas-Setup-0.1.0.exe"
 }
