@@ -11,61 +11,92 @@
 @font-face{font-family:'IBM Plex Sans';font-weight:600;src:url(fonts/ibm-plex-sans-latin-600-normal.woff2) format('woff2');font-display:swap}
 @font-face{font-family:'IBM Plex Sans';font-weight:700;src:url(fonts/ibm-plex-sans-latin-700-normal.woff2) format('woff2');font-display:swap}
 @font-face{font-family:'Source Serif 4';font-weight:600;src:url(fonts/source-serif-4-latin-600-normal.woff2) format('woff2');font-display:swap}
-:root{--bg:#f2f5f9;--surface:#fff;--line:#e4e9f0;--tx:#101828;--mu:#667085;--navy:#1b2f4b;--navy-2:#2c4a73;--navy-t:#eaf0f8;--blue:#2f5bea;--ok:#12805c;
+:root{color-scheme:light;--navy:#0b1f3a;--navy-2:#16365e;--navy-3:#27507f;--soft:#a9bbd6;--white:#fff;--paper:#f5f8fc;--line:#dde5f0;--tx:#14233a;--mu:#5b6b82;--ok:#12805c;
 --sans:'IBM Plex Sans',system-ui,sans-serif;--serif:'Source Serif 4',Georgia,serif}
-@media(prefers-color-scheme:dark){:root{--bg:#0f1520;--surface:#172030;--line:#26334a;--tx:#eef2f8;--mu:#9aa7bd;--navy:#dbe6f7;--navy-2:#9db8e6;--navy-t:#1c2940;--blue:#7c9bff}}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--tx);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
-a{color:var(--blue)}
+body{margin:0;background:var(--white);color:var(--tx);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--navy-3)}
 .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-header{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
-.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;color:var(--navy);text-decoration:none}
+.band{background:radial-gradient(ellipse at 78% 0%,var(--navy-2),var(--navy) 62%);color:#fff;padding-bottom:132px}
+header{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;color:#fff;text-decoration:none}
 .brand img{width:32px;height:32px;border-radius:8px}
-header nav a{font-size:14px;margin-left:20px;color:var(--mu);text-decoration:none}header nav a:hover{color:var(--tx)}
-.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding:48px 0 56px}
-.tag{display:inline-block;background:var(--navy-t);color:var(--navy);font-weight:600;font-size:13px;padding:5px 12px;border-radius:99px}
-h1{font:600 clamp(36px,5.4vw,56px)/1.08 var(--serif);color:var(--navy);margin:16px 0 14px;letter-spacing:-.01em}
-.lead{font-size:18px;color:var(--mu);max-width:520px;margin:0 0 28px}
-.dl{display:inline-flex;align-items:center;gap:12px;background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:17px;padding:15px 26px;border-radius:12px;box-shadow:0 12px 28px -12px rgba(27,47,75,.6);transition:transform .15s,box-shadow .15s}
-@media(prefers-color-scheme:dark){.dl{color:#0f1520}}
-.dl:hover{transform:translateY(-2px)}.dl:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+header nav a{font-size:14px;margin-left:22px;color:var(--soft);text-decoration:none}header nav a:hover{color:#fff}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start;padding:44px 0 0}
+.tag{display:inline-block;border:1px solid rgba(255,255,255,.28);color:#dbe6f7;font-weight:600;font-size:13px;padding:4px 13px;border-radius:99px}
+h1{font:600 clamp(36px,5.2vw,56px)/1.08 var(--serif);color:#fff;margin:0 0 16px;letter-spacing:-.01em}
+.lead{font-size:18px;color:var(--soft);max-width:520px;margin:0 0 30px}
+.dl{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--navy);text-decoration:none;font-weight:600;font-size:17px;padding:15px 26px;border-radius:12px;box-shadow:0 14px 30px -14px rgba(0,0,0,.55);transition:transform .15s}
+.dl:hover{transform:translateY(-2px)}.dl:focus-visible{outline:3px solid #fff;outline-offset:3px}
 .dl svg{width:20px;height:20px}
-.meta{margin:14px 0 0;font-size:14px;color:var(--mu)}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:0 1px 2px rgba(16,24,40,.05),0 18px 40px -22px rgba(16,24,40,.25)}
-.card h2{font-size:15px;margin:0 0 14px;color:var(--mu);font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.meta{margin:14px 0 0;font-size:14px;color:var(--soft)}
+.card{background:#fff;color:var(--tx);border-radius:18px;padding:28px;margin-bottom:-110px;box-shadow:0 30px 60px -28px rgba(5,15,32,.7)}
+.card h2{font-size:18px;margin:0 0 10px;color:var(--navy);font-weight:700}
 .card ul{list-style:none;margin:0;padding:0}
-.card li{display:flex;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:15px}.card li:first-child{border-top:0}
+.card li{display:flex;gap:10px;padding:10px 0;border-top:1px solid var(--line);font-size:15px}.card li:first-child{border-top:0}
 .card li:before{content:"";flex:none;width:18px;height:18px;margin-top:3px;border-radius:50%;background:var(--ok) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-6.5' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
-section{padding:36px 0}
-h2.sec{font:600 28px/1.2 var(--serif);color:var(--navy);margin:0 0 8px}
-.sub{color:var(--mu);margin:0 0 24px;max-width:620px}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:s}
-.step{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;counter-increment:s}
-.step:before{content:counter(s);display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--navy-t);color:var(--navy);font-weight:700;margin-bottom:12px}
-.step h3{margin:0 0 6px;font-size:17px}.step p{margin:0;color:var(--mu);font-size:15px}
-.mods{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.mod{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
-.mod b{display:block;color:var(--navy);margin-bottom:4px}.mod span{color:var(--mu);font-size:14px;line-height:1.5}
-.note{background:var(--navy-t);border-radius:16px;padding:20px 24px;color:var(--tx)}
+main{padding-top:0}
+section{padding:44px 0}
+#install{padding-top:56px}
+h2.sec{font:600 30px/1.2 var(--serif);color:var(--navy);margin:0 0 8px}
+.sub{color:var(--mu);margin:0 0 26px;max-width:620px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;counter-reset:s;border-top:2px solid var(--navy)}
+.step{padding:22px 24px 6px 0;counter-increment:s}
+.step:before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;margin-bottom:12px}
+.step h3{margin:0 0 6px;font-size:17px;color:var(--navy)}.step p{margin:0;color:var(--mu);font-size:15px}
+.note{background:var(--paper);border-left:4px solid var(--navy);border-radius:0 12px 12px 0;padding:18px 22px;margin-top:22px}
 .note b{color:var(--navy)}.note p{margin:6px 0 0;color:var(--mu);font-size:15px}
-details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:10px}
-summary{cursor:pointer;font-weight:600}details p{margin:10px 0 0;color:var(--mu);font-size:15px}
-footer{border-top:1px solid var(--line);margin-top:30px;padding:26px 0 40px;color:var(--mu);font-size:14px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-@media(max-width:820px){.hero{grid-template-columns:1fr;padding-top:24px}.steps,.mods{grid-template-columns:1fr}header nav{display:none}}
+.alt{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.mods{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);background:#fff}
+.mod{padding:20px 22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.mod b{display:block;color:var(--navy);margin-bottom:4px}.mod span{color:var(--mu);font-size:14px;line-height:1.5}
+details{border-bottom:1px solid var(--line);padding:16px 0}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{cursor:pointer;font-weight:600;color:var(--navy)}details p{margin:10px 0 0;color:var(--mu);font-size:15px;max-width:720px}
+footer{position:relative;background:var(--white);color:var(--mu);font-size:14px;padding:28px 0 36px}
+footer:before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:min(1280px,calc(100% - 96px));height:2px;background:linear-gradient(90deg,transparent,var(--navy) 50%,transparent);opacity:.4;clip-path:polygon(0 50%,50% 0,100% 50%,50% 100%)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--navy)}
+footer .wrap{align-items:center;max-width:1280px;padding:0 48px;gap:16px 40px}.fbrandlink{display:flex;align-items:center;gap:10px;text-decoration:none}.flogo{height:30px;width:auto;display:block}.flinks{margin-left:auto}.fbrand{color:var(--navy);font-weight:700;font-size:16px}.flinks{display:flex;gap:28px}.flinks a{text-decoration:none}.flinks a:hover{text-decoration:underline}@media(max-width:820px){footer .wrap{padding:0 16px}.flinks{margin-left:0}footer:before{width:calc(100% - 32px)}}
+@media(max-width:820px){.hero{grid-template-columns:1fr;padding-top:24px}.band{padding-bottom:100px}.card{margin-bottom:-170px}.steps{grid-template-columns:1fr}.step{padding-right:0}.mods{grid-template-columns:1fr}header nav{display:none}#install{padding-top:200px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+#contact{padding-bottom:56px}
+.cgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cc{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;text-decoration:none;color:var(--tx);transition:transform .15s,box-shadow .15s,border-color .15s}
+a.cc:hover{transform:translateY(-3px);border-color:var(--navy-3);box-shadow:0 18px 30px -20px rgba(11,31,58,.45)}
+a.cc:focus-visible{outline:3px solid var(--navy-3);outline-offset:3px}
+.ci{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--navy);color:#fff;margin-bottom:16px}
+.ci svg{width:20px;height:20px}
+.cc h3{margin:0 0 4px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--mu)}
+.cc .v{font-weight:600;font-size:16px;color:var(--navy);word-break:break-word}
+.cc p{margin:8px 0 0;color:var(--mu);font-size:14px;line-height:1.5}
+.tips{margin-top:22px;background:#fff;border:1px solid var(--line);border-left:4px solid var(--navy);border-radius:0 12px 12px 0;padding:18px 22px}
+.tips b{color:var(--navy)}.tips ul{margin:8px 0 0;padding-left:20px;color:var(--mu);font-size:15px}.tips li{margin:2px 0}
+@media(max-width:1000px){.cgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.cgrid{grid-template-columns:1fr}}
+.get{margin:24px auto 72px;width:calc(100% - 96px);max-width:1280px}
+.download{display:flex;align-items:center;justify-content:space-between;gap:48px;padding:56px 64px;border-radius:40px;color:#f4f8f4;background:linear-gradient(135deg,var(--navy-3) 0%,var(--navy-2) 38%,var(--navy) 100%);font-size:16px}
+.download .txt{max-width:420px}
+.download .eb{font:500 12px/1.4 ui-monospace,Consolas,"Courier New",monospace;letter-spacing:.12em;text-transform:uppercase;color:#b9c9e0;margin:0 0 6px}
+.download h2{font:600 38px/1.1 var(--sans);letter-spacing:-.02em;color:#fff;margin:0 0 14px}
+.download p.d{font-size:15px;line-height:1.25;color:#c4d2e6;margin:0}
+.download .act{flex:none}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:#dbe6f7;color:#0b1f3a;text-decoration:none;font-weight:600;font-size:14.72px;padding:14px 26px;border-radius:999px;transition:transform .15s}
+.btn-primary:hover{transform:translateY(-2px)}.btn-primary:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.btn-primary svg{width:18px;height:18px}
+.download .m{margin:14px 0 0;font:400 11px/1.4 ui-monospace,Consolas,"Courier New",monospace;letter-spacing:.08em;text-transform:uppercase;color:#9fb2d0}
+@media(max-width:820px){.get{width:calc(100% - 32px)}.download{flex-direction:column;align-items:flex-start;padding:40px 28px;border-radius:28px;gap:28px}.download h2{font-size:32px}}
 </style>
 </head>
 <body>
+<div class="band">
 <div class="wrap">
 <header>
  <a class="brand" href="/"><img src="icon.png" alt="">Atlas</a>
- <nav><a href="#install">How to install</a><a href="#inside">What is inside</a><a href="#help">Help</a></nav>
+ <nav><a href="#install">How to install</a><a href="#inside">What is inside</a><a href="#help">Help</a><a href="#contact">Contact</a></nav>
 </header>
-
-<main>
 <div class="hero">
  <div>
-  <span class="tag">Pilot for Windows</span>
   <h1>Run your whole business from one app.</h1>
   <p class="lead">Atlas by Invitt Digital handles invoices, quotations, receipts, clients, tasks, staff and your books. Your records stay on your own computer.</p>
   <a class="dl" id="dl" href="downloads/Atlas-Setup-0.1.0.exe" download>
@@ -78,13 +109,17 @@ footer{border-top:1px solid var(--line);margin-top:30px;padding:26px 0 40px;colo
   <h2>What you get</h2>
   <ul>
    <li>Professional invoices, quotations and receipts with your own logo</li>
-   <li>Works without internet. Your data never leaves your computer</li>
+   <li>Works offline. Your data never leaves your computer</li>
    <li>A 30 day licence, started by a code sent to your email</li>
    <li>Backups in one click, so you are always safe</li>
   </ul>
  </div>
 </div>
+</div>
+</div>
 
+<main>
+<div class="wrap">
 <section id="install">
  <h2 class="sec">Install in three steps</h2>
  <p class="sub">It takes about two minutes.</p>
@@ -93,9 +128,12 @@ footer{border-top:1px solid var(--line);margin-top:30px;padding:26px 0 40px;colo
   <div class="step"><h3>Run the installer</h3><p>Open the file. If Windows shows <b>Windows protected your PC</b>, press <b>More info</b>, then <b>Run anyway</b>.</p></div>
   <div class="step"><h3>Set up and start</h3><p>Enter your company details and email. We send you a 6-digit code. Type it in and Atlas is ready.</p></div>
  </div>
- <div class="note" style="margin-top:16px"><b>Why does Windows show that box?</b><p>Atlas is new and not yet signed with a paid Windows certificate, so Windows is careful with anything it has not seen before. The installer comes straight from Invitt Digital. Only download Atlas from this page.</p></div>
+ <div class="note"><b>Why does Windows show that box?</b><p>Atlas is new and not yet signed with a paid Windows certificate, so Windows is careful with anything it has not seen before. The installer comes straight from Invitt Digital. Only download Atlas from this page.</p></div>
 </section>
+</div>
 
+<div class="alt">
+<div class="wrap">
 <section id="inside">
  <h2 class="sec">What is inside</h2>
  <p class="sub">Everything a small business needs, in one place.</p>
@@ -111,29 +149,91 @@ footer{border-top:1px solid var(--line);margin-top:30px;padding:26px 0 40px;colo
   <div class="mod"><b>Backups</b><span>One click saves a dated copy of everything to your computer.</span></div>
  </div>
 </section>
+</div>
+</div>
 
+<div class="wrap">
 <section id="help">
  <h2 class="sec">Questions</h2>
- 
+ <p class="sub">Short answers to what people ask first.</p>
  <details><summary>Is my data sent anywhere?</summary><p>No. Your records are saved on your computer. Only the licence check talks to Invitt, and it sends no business records.</p></details>
  <details><summary>How do I get a new version?</summary><p>Atlas tells you when a new version is ready. Press Download, run the new installer, and your records stay as they are. You can also check in Settings, under About.</p></details>
  <details><summary>Does it work on Mac or phone?</summary><p>Not yet. This pilot is for Windows 10 and 11 only.</p></details>
  <details><summary>I need help or want to give feedback</summary><p>Email <a href="mailto:support@invitt.co.zw">support@invitt.co.zw</a> or WhatsApp <a href="https://wa.me/263787412809">+263 787 412 809</a>. You can also read the <a href="Atlas-Pilot-Guide.pdf">pilot guide (PDF)</a>.</p></details>
 </section>
+</div>
+<div class="alt">
+<div class="wrap">
+<section id="contact">
+ <h2 class="sec">Get in touch</h2>
+ <p class="sub">Stuck on the install, waiting for your licence code, or have feedback from the pilot? Reach us any of these ways.</p>
+ <div class="cgrid">
+  <a class="cc" href="mailto:support@invitt.co.zw">
+   <span class="ci"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4" width="15" height="12" rx="2"/><path d="M3 5.5l7 5.5 7-5.5"/></svg></span>
+   <h3>Email</h3><span class="v">support@invitt.co.zw</span>
+   <p>Best for install problems, licence codes and detailed feedback.</p>
+  </a>
+  <a class="cc" href="https://wa.me/263787412809">
+   <span class="ci"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l1.1-3.6A7 7 0 1 1 7 16l-4 1z"/><path d="M7.5 7.5c0 2.8 2.2 5 5 5l1-1.2-1.6-.9-.8.6a3.4 3.4 0 0 1-1.7-1.7l.6-.8-.9-1.6z"/></svg></span>
+   <h3>WhatsApp</h3><span class="v">+263 787 412 809</span>
+   <p>Quick questions and screenshots are easiest here.</p>
+  </a>
+  <a class="cc" href="Atlas-Pilot-Guide.pdf">
+   <span class="ci"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 2.5h6.5L15.5 6.5V17a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V3a.5.5 0 0 1 .5-.5z"/><path d="M11.5 2.5v4h4M7 10.5h6M7 13.5h6"/></svg></span>
+   <h3>Pilot guide</h3><span class="v">Read the PDF</span>
+   <p>Step by step help for setting up and using Atlas.</p>
+  </a>
+  <div class="cc">
+   <span class="ci"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 18s6-5.2 6-9.5a6 6 0 1 0-12 0C4 12.8 10 18 10 18z"/><circle cx="10" cy="8.5" r="2.2"/></svg></span>
+   <h3>Based in</h3><span class="v">Harare, Zimbabwe</span>
+   <p>Invitt Digital &middot; <a href="https://invitt.co.zw">invitt.co.zw</a></p>
+  </div>
+ </div>
+ <div class="tips"><b>To help us fix things faster, include:</b>
+  <ul>
+   <li>Your Atlas version (Settings, then About)</li>
+   <li>What you were doing when the problem happened</li>
+   <li>A screenshot of any error message</li>
+  </ul>
+ </div>
+</section>
+</div>
+</div>
+
+<div class="get">
+ <div class="download">
+  <div class="txt">
+   <p class="eb">Free during the pilot</p>
+   <h2>Get Atlas for Windows</h2>
+   <p class="d">One installer for your invoices, clients, staff and books. Enter the code we email you and your company is ready to work.</p>
+  </div>
+  <div class="act">
+   <a class="btn-primary" id="dl2" href="downloads/Atlas-Setup-0.1.0.exe" download>
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3v10m0 0l-4-4m4 4l4-4M4 17h12"/></svg>
+    <span id="dl2Text">Download Atlas for Windows</span>
+   </a>
+   <p class="m" id="meta2">Windows 10 or 11 | 64-bit</p>
+  </div>
+ </div>
+</div>
 </main>
 
 <footer>
- <span>Atlas is made by Invitt Digital (Pvt) Ltd, Harare, Zimbabwe.</span>
- <span><a href="https://invitt.co.zw">invitt.co.zw</a></span>
+ <div class="wrap">
+  <a class="fbrandlink" href="/"><img class="flogo" src="ATLAS-Logo.svg" alt="Atlas"><strong class="fbrand">Invitt Digital</strong></a>
+  <nav class="flinks" aria-label="Legal"><a href="https://toolshed.apexuscrest.com/terms">Terms of Service</a><a href="https://toolshed.apexuscrest.com/privacy">Privacy Policy</a></nav>
+  <span>&copy; 2026 Invitt Digital (Private) Limited, Harare, Zimbabwe</span>
+ </div>
 </footer>
-</div>
 
 <script>
 /* The button, version and notes come from version.json, the same file the Atlas app checks for updates. */
 fetch('version.json?t='+Date.now(),{cache:'no-store'}).then(r=>r.json()).then(v=>{
  if(!v||!v.version||!v.file)return;
- const a=document.getElementById('dl');a.href=v.file;
+ const a=document.getElementById('dl');a.href=v.file;document.getElementById('dl2').href=v.file;
  document.getElementById('dlText').textContent='Download Atlas '+v.version+' for Windows';
+ document.getElementById('dl2Text').textContent='Download Atlas '+v.version+' for Windows';
+ document.getElementById('meta2').textContent='v'+v.version+' | Windows | Invitt Digital';
  let t='Version '+v.version;if(v.released)t+=' | '+v.released;if(v.size)t+=' | '+v.size;
  document.getElementById('meta').textContent=t+' | Windows 10 or 11, 64-bit. Free during the pilot.';
 }).catch(()=>{});
