@@ -170,9 +170,9 @@ footer.sf .sf-legal a:hover{color:#fff;text-decoration:underline}
 <body>
 <div class="top">
 <header class="bar">
- <a class="brand" href="index.html"><img src="icon.png" alt="">Atlas</a>
- <nav class="links" aria-label="Main"><a href="index.html#who">Who it&rsquo;s for</a><a href="pricing.html" aria-current="page">Pricing</a><a href="install.html">Install</a><a href="contact.html#help">FAQ</a><a href="contact.html">Contact</a></nav>
- <a class="nbtn" data-dl href="install.html"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3v10m0 0l-4-4m4 4l4-4M4 17h12"/></svg>Download</a>
+ <a class="brand" href="/"><img src="icon.png" alt="">Atlas</a>
+ <nav class="links" aria-label="Main"><a href="/#who">Who it&rsquo;s for</a><a href="/pricing" aria-current="page">Pricing</a><a href="/install">Install</a><a href="/contact#help">FAQ</a><a href="/contact">Contact</a></nav>
+ <a class="nbtn" data-dl href="/install"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3v10m0 0l-4-4m4 4l4-4M4 17h12"/></svg>Download</a>
 </header>
 <div class="hero">
  <h1>Simple pricing for Atlas.</h1>
@@ -188,7 +188,7 @@ footer.sf .sf-legal a:hover{color:#fff;text-decoration:underline}
    <h2>Try Atlas for 30 days, free.</h2>
    <p>Download the installer, set up your company and enter the code we email you. No card needed.</p>
   </div>
-  <a class="btn" data-dl href="install.html">Download Atlas for Windows</a>
+  <a class="btn" data-dl href="/install">Download Atlas for Windows</a>
  </div>
 </div>
 
@@ -263,7 +263,7 @@ footer.sf .sf-legal a:hover{color:#fff;text-decoration:underline}
  <div class="sf-in">
   <div class="sf-top">
    <div class="sf-about">
-    <a class="fbrandlink" href="index.html"><img class="flogo" src="ATLAS-Logo.svg" alt="Atlas"><strong class="fbrand">Invitt Digital</strong></a>
+    <a class="fbrandlink" href="/"><img class="flogo" src="ATLAS-Logo.svg" alt="Atlas"><strong class="fbrand">Invitt Digital</strong></a>
     <p>Quotations, invoices, receipts, clients and your books for Zimbabwe businesses, with ZIMRA dates and tax estimates alongside. Everything stays on your own computer.</p>
     <div class="sf-social">
      <a href="https://www.facebook.com/profile.php?id=61575425931711" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
@@ -273,17 +273,17 @@ footer.sf .sf-legal a:hover{color:#fff;text-decoration:underline}
    </div>
    <nav class="sf-col" aria-label="Atlas">
     <h4>Atlas</h4>
-    <a href="index.html#who">Who it&rsquo;s for</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="install.html">Install</a>
-    <a href="contact.html#help">FAQ</a>
+    <a href="/#who">Who it&rsquo;s for</a>
+    <a href="/pricing">Pricing</a>
+    <a href="/install">Install</a>
+    <a href="/contact#help">FAQ</a>
    </nav>
    <nav class="sf-col" aria-label="Support">
     <h4>Support</h4>
-    <a href="contact.html">Contact</a>
+    <a href="/contact">Contact</a>
     <a href="Atlas-Pilot-Guide.pdf">Pilot guide (PDF)</a>
-    <a href="terms.html">Terms of Service</a>
-    <a href="privacy.html">Privacy Policy</a>
+    <a href="/terms">Terms of Service</a>
+    <a href="/privacy">Privacy Policy</a>
    </nav>
    <div class="sf-col">
     <h4>Get in Touch</h4>
@@ -294,7 +294,7 @@ footer.sf .sf-legal a:hover{color:#fff;text-decoration:underline}
   </div>
   <div class="sf-bottom">
    <span>&copy; 2026 Invitt Digital (Private) Limited, Harare, Zimbabwe</span>
-   <span class="sf-legal"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></span>
+   <span class="sf-legal"><a href="/terms">Terms</a><a href="/privacy">Privacy</a></span>
   </div>
  </div>
 </footer>
@@ -340,7 +340,7 @@ function card(p,single){
  var up=(p.kind==='monthly'&&c.length>1)?'Pay '+c.slice(0,-1).join(', ')+' or '+c[c.length-1]+' months up front.':(p.kind==='once'?'One payment.':'Pay up front.');
  d.innerHTML='<div class="pleft"><div class="ptag"></div><h3></h3><p class="psub"></p><div class="pamount"></div><div class="pnote"></div>'
   +'<button type="button" class="pbtn"></button>'
-  +'<p class="pagree">By subscribing, you agree to our <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy Policy</a>.</p>'
+  +'<p class="pagree">By subscribing, you agree to our <a href="/terms">Terms</a> and <a href="/privacy">Privacy Policy</a>.</p>'
   +'<a class="ptalk" href="https://wa.me/263787412809">Prefer to talk first?</a></div>'
   +'<ul class="pfeat"></ul>';
  d.querySelector('.ptag').textContent=single?'One plan':'Plan';
