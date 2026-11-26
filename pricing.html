@@ -275,7 +275,7 @@ $('payForm').addEventListener('submit',function(ev){
  var m=sel.kind==='monthly'?months:1;
  var ctrl=new AbortController();var timer=setTimeout(function(){ctrl.abort()},55000);
  fetch(API+'/pay/checkout',{method:'POST',headers:{'Content-Type':'application/json'},signal:ctrl.signal,
-  body:JSON.stringify({product:sel.id,months:m,name:name.slice(0,120),email:email.slice(0,200),phone:phone.slice(0,30),website:co.slice(0,300),
+  body:JSON.stringify({product:sel.id,months:m,name:name.slice(0,120),email:email.slice(0,200),phone:phone.slice(0,30),website:'',
    note:('Atlas licence for '+co+'. Atlas sign-in email: '+email).slice(0,500)})})
  .then(function(r){return r.json().catch(function(){return null}).then(function(j){return {r:r,j:j}})})
  .then(function(x){
