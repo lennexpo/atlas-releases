@@ -44,14 +44,39 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 footer a{color:var(--navy)}
 footer .wrap{align-items:center;max-width:1280px;padding:0 48px;gap:16px 40px}.fbrandlink{display:flex;align-items:center;gap:10px;text-decoration:none}.flogo{height:30px;width:auto;display:block}.flinks{margin-left:auto}.fbrand{color:var(--navy);font-weight:700;font-size:16px}.flinks{display:flex;gap:28px}.flinks a{text-decoration:none}.flinks a:hover{text-decoration:underline}@media(max-width:820px){footer .wrap{padding:0 16px}.flinks{margin-left:0}footer:before{width:calc(100% - 32px)}}
 @media(max-width:820px){.hero{grid-template-columns:1fr;padding-top:24px}.band{padding-bottom:100px}.card{margin-bottom:-170px}.steps{grid-template-columns:1fr}.step{padding-right:0}.mods{grid-template-columns:1fr}header nav{display:none}#install{padding-top:200px}}
+/* Site footer */
+footer.sf{position:relative;background:#0b1f3a;border-top:0;color:#a9bbd6;font-size:15px;line-height:1.6;padding:64px 0 28px}
+footer.sf:before{display:none}
+footer.sf .sf-in{max-width:1280px;margin:0 auto;padding:0 48px}
+footer.sf .sf-top{display:grid;grid-template-columns:1.7fr 1fr 1fr 1.1fr;gap:40px 48px}
+footer.sf .fbrandlink{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
+footer.sf .flogo{height:34px;width:auto;display:block;filter:brightness(0) invert(1)}
+footer.sf .fbrand{color:#fff;font-weight:700;font-size:18px}
+footer.sf .sf-about p{margin:18px 0 0;max-width:30em;color:#a9bbd6}
+footer.sf .sf-social{display:flex;gap:12px;margin-top:24px}
+footer.sf .sf-social a{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;text-decoration:none;transition:background .15s,color .15s,transform .15s}
+footer.sf .sf-social a:hover{background:#fff;color:#0b1f3a;transform:translateY(-2px)}
+footer.sf .sf-social svg{width:20px;height:20px}
+footer.sf .sf-col h4{margin:0 0 16px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#fff;font-weight:600}
+footer.sf .sf-col a{display:block;color:#c4d1e6;text-decoration:none;padding:5px 0}
+footer.sf .sf-col a:hover{color:#fff;text-decoration:underline}
+footer.sf .sf-col p{margin:0;padding:5px 0;color:#c4d1e6}
+footer.sf a:focus-visible{outline:3px solid #a9bbd6;outline-offset:3px;border-radius:6px}
+footer.sf .sf-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px 32px;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.16);font-size:14px;color:#a9bbd6}
+footer.sf .sf-legal{display:flex;gap:24px}
+footer.sf .sf-legal a{color:#c4d1e6;text-decoration:none}
+footer.sf .sf-legal a:hover{color:#fff;text-decoration:underline}
+@media(max-width:900px){footer.sf .sf-top{grid-template-columns:1fr 1fr}footer.sf .sf-about{grid-column:1/-1}}
+@media(max-width:820px){footer.sf{padding:48px 0 24px}footer.sf .sf-in{padding:0 20px}}
+@media(max-width:480px){footer.sf .sf-top{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="legal-top">
 <div class="wrap">
 <header>
- <a class="brand" href="/"><img src="icon.png" alt="">Atlas</a>
- <a class="back" href="/">Back to download page</a>
+ <a class="brand" href="index.html"><img src="icon.png" alt="">Atlas</a>
+ <a class="back" href="index.html">Back to download page</a>
 </header>
 <h1>Privacy Policy</h1>
 <p class="upd">Last updated: 17 November 2026</p>
@@ -120,11 +145,43 @@ WhatsApp: <a href="https://wa.me/263787412809">+263 787 412 809</a></p>
 </article>
 </div>
 </main>
-<footer>
- <div class="wrap">
-  <a class="fbrandlink" href="/"><img class="flogo" src="ATLAS-Logo.svg" alt="Atlas"><strong class="fbrand">Invitt Digital</strong></a>
-  <nav class="flinks" aria-label="Legal"><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></nav>
-  <span>&copy; 2026 Invitt Digital (Private) Limited, Harare, Zimbabwe</span>
+<footer class="sf">
+ <div class="sf-in">
+  <div class="sf-top">
+   <div class="sf-about">
+    <a class="fbrandlink" href="index.html"><img class="flogo" src="ATLAS-Logo.svg" alt="Atlas"><strong class="fbrand">Invitt Digital</strong></a>
+    <p>Quotations, invoices, receipts, clients and your books for Zimbabwe businesses, with ZIMRA dates and tax estimates alongside. Everything stays on your own computer.</p>
+    <div class="sf-social">
+     <a href="https://www.facebook.com/profile.php?id=61575425931711" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+     <a href="https://www.instagram.com/invitt_co" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+     <a href="https://www.linkedin.com/company/145371841" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+    </div>
+   </div>
+   <nav class="sf-col" aria-label="Atlas">
+    <h4>Atlas</h4>
+    <a href="index.html#who">Who it&rsquo;s for</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="index.html#install">Install</a>
+    <a href="contact.html#help">FAQ</a>
+   </nav>
+   <nav class="sf-col" aria-label="Support">
+    <h4>Support</h4>
+    <a href="contact.html">Contact</a>
+    <a href="Atlas-Pilot-Guide.pdf">Pilot guide (PDF)</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="privacy.html">Privacy Policy</a>
+   </nav>
+   <div class="sf-col">
+    <h4>Get in Touch</h4>
+    <a href="https://wa.me/263787412809">WhatsApp</a>
+    <a href="mailto:support@invitt.co.zw">support@invitt.co.zw</a>
+    <p>Harare, Zimbabwe</p>
+   </div>
+  </div>
+  <div class="sf-bottom">
+   <span>&copy; 2026 Invitt Digital (Private) Limited, Harare, Zimbabwe</span>
+   <span class="sf-legal"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></span>
+  </div>
  </div>
 </footer>
 </body>

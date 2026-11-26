@@ -39,34 +39,13 @@ main{padding-bottom:24px}
 .pilot h2{color:#fff;margin:0 0 8px;font-size:26px}
 .pilot p{margin:0;color:#d4deed;max-width:520px}
 .pilot .btn{background:#fff;color:var(--navy)}.pilot .btn:hover{background:#e9eff8}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
-.grid.one{grid-template-columns:minmax(0,440px)}
-.card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:0 2px 28px rgba(11,31,58,.05)}
-.card.is-on{border-color:var(--navy);box-shadow:0 0 0 1px var(--navy),0 2px 28px rgba(11,31,58,.08)}
-.card h3{margin:0 0 6px;font-size:19px;color:var(--navy)}
-.card .bl{color:var(--mu);margin:0 0 18px;font-size:14.5px}
-.price{font:700 38px/1 var(--sans);color:var(--navy);letter-spacing:-.02em;margin:0 0 4px}
-.price small{font:400 15px var(--sans);color:var(--mu);letter-spacing:0}
-.card .btn{margin-top:auto}
-.card .price+p{margin:0 0 22px;color:var(--mu);font-size:14px}
 .note{border:1px dashed var(--line);border-radius:16px;padding:22px 24px;background:var(--paper);color:var(--mu)}
 .note b{color:var(--navy)}
-.inc{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px 28px}
-.inc li{display:flex;gap:10px;align-items:flex-start}
-.inc svg{flex:none;width:20px;height:20px;margin-top:2px;color:var(--ok)}
 #checkout[hidden]{display:none}
-.form{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:0 2px 28px rgba(11,31,58,.05)}
-.form h3{margin:0 0 4px;font-size:19px;color:var(--navy)}
 .fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:20px 0}
 .fld.full{grid-column:1/-1}
 .fld label{display:block;font-weight:600;font-size:14px;margin-bottom:6px;color:var(--navy)}
 .fld input{width:100%;font:400 15px var(--sans);padding:12px 14px;border:1px solid #c5d1e2;border-radius:9px;background:#fff;color:var(--tx)}
-.months{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 0}
-.months label{border:1px solid #c5d1e2;border-radius:9px;padding:9px 14px;cursor:pointer;font-weight:600;font-size:14px}
-.months label.on{border-color:var(--navy);background:var(--navy);color:#fff}
-.months input{position:absolute;opacity:0;pointer-events:none}
-.sum{display:flex;justify-content:space-between;gap:12px;align-items:center;background:var(--paper);border-radius:12px;padding:16px 18px;margin:0 0 16px}
-.sum strong{font-size:20px;color:var(--navy)}
 .err{color:var(--bad);margin:12px 0 0;font-weight:600}
 .fine{font-size:13.5px;color:var(--mu);margin:14px 0 0}
 .fq details{border-top:1px solid var(--line)}.fq details:last-child{border-bottom:1px solid var(--line)}
@@ -83,13 +62,108 @@ footer a{color:var(--navy)}
 .flinks{margin-left:auto;display:flex;gap:24px}
 @media(max-width:820px){.links{display:none}.top{margin:8px;border-radius:18px}.bar{width:calc(100% - 24px);margin-top:12px}.hero{padding-top:40px}.pilot{padding:28px 24px;border-radius:20px}.fields{grid-template-columns:1fr}footer .wrap{padding:0 20px}.flinks{margin-left:0}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* Sticky nav: the bar stays on screen while scrolling. A spacer keeps the page layout where it was. */
+html{scroll-padding-top:104px}
+.top::before{content:"";display:block;height:88px}
+.bar{position:fixed;top:16px;left:50%;transform:translateX(-50%);width:min(1080px,calc(100% - 48px));max-width:none;margin:0;z-index:100;box-shadow:0 10px 30px -14px rgba(11,31,58,.28)}
+@media(max-width:820px){.top::before{height:80px}.bar{top:10px;width:calc(100% - 20px);margin:0}html{scroll-padding-top:92px}}
+/* Site footer */
+footer.sf{position:relative;background:#0b1f3a;border-top:0;color:#a9bbd6;font-size:15px;line-height:1.6;padding:64px 0 28px}
+footer.sf:before{display:none}
+footer.sf .sf-in{max-width:1280px;margin:0 auto;padding:0 48px}
+footer.sf .sf-top{display:grid;grid-template-columns:1.7fr 1fr 1fr 1.1fr;gap:40px 48px}
+footer.sf .fbrandlink{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
+footer.sf .flogo{height:34px;width:auto;display:block;filter:brightness(0) invert(1)}
+footer.sf .fbrand{color:#fff;font-weight:700;font-size:18px}
+footer.sf .sf-about p{margin:18px 0 0;max-width:30em;color:#a9bbd6}
+footer.sf .sf-social{display:flex;gap:12px;margin-top:24px}
+footer.sf .sf-social a{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;text-decoration:none;transition:background .15s,color .15s,transform .15s}
+footer.sf .sf-social a:hover{background:#fff;color:#0b1f3a;transform:translateY(-2px)}
+footer.sf .sf-social svg{width:20px;height:20px}
+footer.sf .sf-col h4{margin:0 0 16px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#fff;font-weight:600}
+footer.sf .sf-col a{display:block;color:#c4d1e6;text-decoration:none;padding:5px 0}
+footer.sf .sf-col a:hover{color:#fff;text-decoration:underline}
+footer.sf .sf-col p{margin:0;padding:5px 0;color:#c4d1e6}
+footer.sf a:focus-visible{outline:3px solid #a9bbd6;outline-offset:3px;border-radius:6px}
+footer.sf .sf-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px 32px;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.16);font-size:14px;color:#a9bbd6}
+footer.sf .sf-legal{display:flex;gap:24px}
+footer.sf .sf-legal a{color:#c4d1e6;text-decoration:none}
+footer.sf .sf-legal a:hover{color:#fff;text-decoration:underline}
+@media(max-width:900px){footer.sf .sf-top{grid-template-columns:1fr 1fr}footer.sf .sf-about{grid-column:1/-1}}
+@media(max-width:820px){footer.sf{padding:48px 0 24px}footer.sf .sf-in{padding:0 20px}}
+@media(max-width:480px){footer.sf .sf-top{grid-template-columns:1fr}}
+/* Plan card (modelled on invitt.co.zw/pricing) */
+#plans{text-align:center}
+#plans .sub{margin-left:auto;margin-right:auto}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;align-items:stretch;text-align:left}
+.pgrid.one{grid-template-columns:minmax(0,460px);justify-content:center}
+.pcard{position:relative;display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:16px;padding:30px 28px;box-shadow:0 2px 28px rgba(11,31,58,.05)}
+.pcard.featured{background:#eef3fb;border-color:#c9d6ea}
+.ptag{align-self:flex-start;font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--navy);background:#e4ecf8;border:1px solid #c9d6ea;border-radius:999px;padding:5px 12px;margin-bottom:16px}
+.pcard.featured .ptag{background:var(--navy);color:#fff;border-color:var(--navy)}
+.pcard h3{margin:0;font-size:28px;line-height:1.15;font-weight:700;color:#06152b}
+.psub{margin:8px 0 0;font-size:14.5px;line-height:1.5;color:var(--mu)}
+.pamount{margin-top:24px;font-size:clamp(48px,5vw,60px);line-height:1;font-weight:700;letter-spacing:-.02em;color:#06152b}
+.pamount span{font-size:15px;font-weight:400;letter-spacing:0;color:var(--mu)}
+.pnote{margin:8px 0 24px;font-size:13.5px;color:var(--mu)}
+.pbtn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:var(--navy);color:#fff;border:0;border-radius:999px;padding:16px 20px;font:700 17px/1.2 var(--sans);cursor:pointer;transition:background .15s,transform .1s}
+.pbtn:hover{background:#16365e}.pbtn:active{transform:scale(.99)}
+.pbtn:focus-visible{outline:3px solid var(--navy-3);outline-offset:3px}
+.pagree{margin:12px 0 24px;font-size:12px;line-height:1.5;text-align:center;color:var(--mu)}
+.pagree a{color:var(--navy)}
+.pfeat{list-style:none;margin:0 0 4px;padding:0;display:flex;flex-direction:column;gap:14px;flex:1}
+.pfeat li{position:relative;font-size:15px;line-height:22px;padding-left:34px;color:#06152b}
+.pfeat li:before{content:"";position:absolute;left:0;top:0;width:22px;height:22px;border-radius:50%;background:var(--navy) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/13px 13px no-repeat}
+.pfeat li.plus{padding:16px 0 0;font-size:19px;font-weight:700;line-height:1.3;border-top:1px solid #c9d6ea}
+.pfeat li.plus:before{content:none}
+.ptalk{display:block;text-align:center;margin-top:18px;font-size:13.5px;font-weight:500;color:var(--mu);text-decoration:underline;text-underline-offset:3px}
+.ptalk:hover{color:var(--navy)}
+/* One plan: wide, horizontal card */
+.pleft{display:flex;flex-direction:column}
+.pgrid:not(.one) .pleft{display:contents}
+.pgrid:not(.one) .pfeat{order:1}
+.pgrid:not(.one) .ptalk{order:2}
+.pgrid.one{grid-template-columns:minmax(0,1fr)}
+.pgrid.one .pcard{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:44px;padding:40px;align-items:stretch}
+.pgrid.one .pfeat{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 28px;align-content:start;margin:0;padding-left:44px;border-left:1px solid #c9d6ea}
+.pgrid.one .pfeat li.plus{grid-column:1/-1;padding:0 0 4px;border-top:0}
+.pgrid.one .ptalk{margin-top:auto;padding-top:18px}
+@media(max-width:900px){.pgrid.one .pcard{grid-template-columns:1fr;gap:28px;padding:28px 24px}.pgrid.one .pfeat{padding:28px 0 0;border-left:0;border-top:1px solid #c9d6ea}}
+@media(max-width:560px){.pgrid.one .pfeat{grid-template-columns:1fr}}
+/* Checkout (modelled on invitt.co.zw/pay): 1. Choose, 2. Your details */
+.playout{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:48px;align-items:start}
+.playout fieldset{min-width:0;margin:0;padding:0;border:0}
+.popts legend,.pdetails h3{margin:0 0 16px;padding:0;font-size:24px;line-height:1.2;font-weight:700;color:var(--navy);letter-spacing:-.01em}
+.popt{display:flex;gap:14px;align-items:flex-start;margin-bottom:12px;padding:18px 20px;background:#fff;border:1px solid var(--line);border-radius:12px;cursor:pointer;transition:border-color .2s,background .2s}
+.popt:hover{border-color:var(--navy)}
+.popt.is-on{border-color:var(--navy);background:#eef3fb;box-shadow:inset 0 0 0 1px var(--navy)}
+.popt input{margin-top:5px;accent-color:var(--navy)}
+.popt:has(input:focus-visible){outline:3px solid var(--navy-3);outline-offset:2px}
+.popt-body{display:flex;flex-direction:column;gap:6px;min-width:0}
+.popt-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px}
+.popt-top strong{font-size:17px;color:var(--tx)}
+.popt-price{font-size:15px;font-weight:600;color:var(--navy)}
+.popt-blurb{font-size:14.5px;line-height:1.5;color:var(--mu)}
+.pdetails{padding:28px;background:#fff;border:1px solid var(--line);border-radius:12px}
+.pmonths legend{margin:0 0 10px;padding:0;font-size:14px;font-weight:600;color:var(--navy)}
+.months{display:flex;flex-wrap:wrap;gap:8px;margin:0}
+.months label{position:relative;display:inline-flex;align-items:center;padding:10px 16px;border:1px solid var(--line);border-radius:999px;font-size:15px;cursor:pointer}
+.months label.on{border-color:var(--navy);background:#eef3fb;font-weight:600}
+.months input{position:absolute;opacity:0;pointer-events:none}
+.months label:has(input:focus-visible){outline:3px solid var(--navy-3);outline-offset:2px}
+.pdetails .fields{margin:22px 0;gap:18px 20px;align-items:end}
+.sum{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin:0 0 18px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:16px}
+.sum strong{font-size:26px;color:var(--navy)}
+.pdetails .btn{width:100%;border-radius:999px;padding:16px 20px;font-size:17px}
+@media(max-width:900px){.playout{grid-template-columns:1fr;gap:28px}.pdetails{padding:22px 18px}.pdetails .fields{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="top">
 <header class="bar">
  <a class="brand" href="index.html"><img src="icon.png" alt="">Atlas</a>
- <nav class="links" aria-label="Main"><a href="index.html#who">Who it&rsquo;s for</a><a href="pricing.html" aria-current="page">Pricing</a><a href="index.html#install">Install</a><a href="contact.html#help">Help</a><a href="contact.html">Contact</a></nav>
+ <nav class="links" aria-label="Main"><a href="index.html#who">Who it&rsquo;s for</a><a href="pricing.html" aria-current="page">Pricing</a><a href="index.html#install">Install</a><a href="contact.html#help">FAQ</a><a href="contact.html">Contact</a></nav>
  <a class="nbtn" data-dl href="index.html#install"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3v10m0 0l-4-4m4 4l4-4M4 17h12"/></svg>Download</a>
 </header>
 <div class="hero">
@@ -114,41 +188,38 @@ footer a{color:var(--navy)}
  <div class="wrap">
   <h2>Atlas plan</h2>
   <p class="sub" id="plansSub">Loading current prices...</p>
-  <div class="grid" id="cards" aria-live="polite"></div>
+  <div class="pgrid" id="cards" aria-live="polite"></div>
   <div class="note" id="none" hidden></div>
  </div>
 </section>
 
 <section class="sec" id="checkout" hidden>
  <div class="wrap">
-  <form class="form" id="payForm" novalidate>
-   <h3 id="fTitle">Your details</h3>
-   <p class="fine" style="margin-top:0" id="fSub"></p>
-   <div id="monthsBox" hidden>
-    <p style="margin:14px 0 0;font-weight:600;color:var(--navy)">How many months do you want to pay for?</p>
-    <div class="months" id="months" role="radiogroup" aria-label="Months"></div>
-    <p class="fine">Paid up front, so there is nothing to cancel and no surprise charges.</p>
+  <form class="playout" id="payForm" novalidate>
+   <fieldset class="popts">
+    <legend>1. Choose what you need</legend>
+    <div id="opts"></div>
+   </fieldset>
+   <div class="pdetails">
+    <h3>2. Your details</h3>
+    <fieldset class="pmonths" id="monthsBox" hidden>
+     <legend>How many months do you want to pay for?</legend>
+     <div class="months" id="months" role="radiogroup" aria-label="Months"></div>
+     <p class="fine">Paid up front, so there is nothing to cancel and no surprise charges.</p>
+    </fieldset>
+    <div class="fields">
+     <div class="fld"><label for="fName">Full name</label><input id="fName" autocomplete="name"></div>
+     <div class="fld"><label for="fCo">Business name</label><input id="fCo" autocomplete="organization"></div>
+     <div class="fld"><label for="fEmail">Email you use in Atlas (for your receipt)</label><input id="fEmail" type="email" inputmode="email" autocomplete="email"></div>
+     <div class="fld"><label for="fPhone">WhatsApp or phone (optional)</label><input id="fPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+263 ..."></div>
+    </div>
+    <div class="sum" aria-live="polite"><span id="sumWhat"></span><strong id="sumTotal"></strong></div>
+    <button class="btn" id="payBtn" type="submit">Pay securely</button>
+    <p class="err" id="err" role="alert" hidden></p>
+    <p class="fine" id="payNote">You pay on a secure payment page. We never see your card or wallet details.</p>
+    <p class="fine">Would you rather talk first? <a href="https://wa.me/263787412809">WhatsApp us</a>.</p>
    </div>
-   <div class="fields">
-    <div class="fld"><label for="fName">Full name</label><input id="fName" autocomplete="name"></div>
-    <div class="fld"><label for="fCo">Business name</label><input id="fCo" autocomplete="organization"></div>
-    <div class="fld"><label for="fEmail">Email you use in Atlas (for your receipt)</label><input id="fEmail" type="email" inputmode="email" autocomplete="email"></div>
-    <div class="fld"><label for="fPhone">WhatsApp or phone (optional)</label><input id="fPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+263 ..."></div>
-   </div>
-   <div class="sum" aria-live="polite"><span id="sumWhat"></span><strong id="sumTotal"></strong></div>
-   <button class="btn" id="payBtn" type="submit">Pay securely</button>
-   <p class="err" id="err" role="alert" hidden></p>
-   <p class="fine" id="payNote">You pay on a secure payment page. We never see your card or wallet details.</p>
-   <p class="fine">Would you rather talk first? <a href="https://wa.me/263787412809">WhatsApp us</a>.</p>
   </form>
- </div>
-</section>
-
-<section class="sec" id="included">
- <div class="wrap">
-  <h2>Everything is included</h2>
-  <p class="sub">Every plan is the full Atlas. You never pay extra for a module.</p>
-  <ul class="inc" id="inc"></ul>
  </div>
 </section>
 
@@ -166,11 +237,43 @@ footer a{color:var(--navy)}
 </section>
 </main>
 
-<footer>
- <div class="wrap">
-  <a class="fbrandlink" href="index.html"><img class="flogo" src="ATLAS-Logo.svg" alt="Atlas"><strong class="fbrand">Invitt Digital</strong></a>
-  <nav class="flinks" aria-label="Legal"><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></nav>
-  <span>&copy; 2026 Invitt Digital (Private) Limited, Harare, Zimbabwe</span>
+<footer class="sf">
+ <div class="sf-in">
+  <div class="sf-top">
+   <div class="sf-about">
+    <a class="fbrandlink" href="index.html"><img class="flogo" src="ATLAS-Logo.svg" alt="Atlas"><strong class="fbrand">Invitt Digital</strong></a>
+    <p>Quotations, invoices, receipts, clients and your books for Zimbabwe businesses, with ZIMRA dates and tax estimates alongside. Everything stays on your own computer.</p>
+    <div class="sf-social">
+     <a href="https://www.facebook.com/profile.php?id=61575425931711" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+     <a href="https://www.instagram.com/invitt_co" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+     <a href="https://www.linkedin.com/company/145371841" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+    </div>
+   </div>
+   <nav class="sf-col" aria-label="Atlas">
+    <h4>Atlas</h4>
+    <a href="index.html#who">Who it&rsquo;s for</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="index.html#install">Install</a>
+    <a href="contact.html#help">FAQ</a>
+   </nav>
+   <nav class="sf-col" aria-label="Support">
+    <h4>Support</h4>
+    <a href="contact.html">Contact</a>
+    <a href="Atlas-Pilot-Guide.pdf">Pilot guide (PDF)</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="privacy.html">Privacy Policy</a>
+   </nav>
+   <div class="sf-col">
+    <h4>Get in Touch</h4>
+    <a href="https://wa.me/263787412809">WhatsApp</a>
+    <a href="mailto:support@invitt.co.zw">support@invitt.co.zw</a>
+    <p>Harare, Zimbabwe</p>
+   </div>
+  </div>
+  <div class="sf-bottom">
+   <span>&copy; 2026 Invitt Digital (Private) Limited, Harare, Zimbabwe</span>
+   <span class="sf-legal"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></span>
+  </div>
  </div>
 </footer>
 
@@ -185,9 +288,7 @@ var COPY = {
  atlas:{name:'Atlas',blurb:'The full Atlas for your business: invoicing, clients, staff, ZIMRA and books. One plan, nothing extra to buy.'}
 };
 
-var CHECK = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>';
 var INCLUDED = ['Invoices, quotations, receipts and credit notes','Client records and statements','Payments recorded against each invoice','ZIMRA dates and taxes','Staff, payroll and PAYE','Books and accounting reports','Tasks and reminders','Automatic daily backup','Your data stays on your own computer','Updates as they are released'];
-document.getElementById('inc').innerHTML = INCLUDED.map(function(t){return '<li>'+CHECK+'<span>'+t+'</span></li>'}).join('');
 
 var $ = function(id){return document.getElementById(id)};
 var cat = null, sel = null, months = 1;
@@ -209,51 +310,85 @@ function showNone(msg){
  n.innerHTML=msg;
 }
 
-function card(p){
- var d=document.createElement('div');d.className='card';d.dataset.id=p.id;
- var h=document.createElement('h3');h.textContent=nameOf(p);d.appendChild(h);
- var b=document.createElement('p');b.className='bl';b.textContent=blurbOf(p);d.appendChild(b);
- var pr=document.createElement('p');pr.className='price';
- if(p.kind==='once'){pr.innerHTML=money(p.amount||0)+' <small>once-off</small>'}
- else{pr.innerHTML=money(p.monthly||0)+' <small>per month</small>'}
- d.appendChild(pr);
- var s=document.createElement('p');
- s.textContent=p.kind==='once'?'One payment.':'Pay for as many months as you like, up front.';
- d.appendChild(s);
- var btn=document.createElement('button');btn.type='button';btn.className='btn';btn.textContent=cat.products.length===1?'Subscribe':'Choose '+nameOf(p);
+function priceLine(p){return p.kind==='once'?money(p.amount||0)+' once-off':money(p.monthly||0)+' per month'}
+
+function card(p,single){
+ var d=document.createElement('div');d.className='pcard'+(single?' featured':'');d.dataset.id=p.id;
+ var c=choices(p);
+ var up=(p.kind==='monthly'&&c.length>1)?'Pay '+c.slice(0,-1).join(', ')+' or '+c[c.length-1]+' months up front.':(p.kind==='once'?'One payment.':'Pay up front.');
+ d.innerHTML='<div class="pleft"><div class="ptag"></div><h3></h3><p class="psub"></p><div class="pamount"></div><div class="pnote"></div>'
+  +'<button type="button" class="pbtn"></button>'
+  +'<p class="pagree">By subscribing, you agree to our <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy Policy</a>.</p>'
+  +'<a class="ptalk" href="https://wa.me/263787412809">Prefer to talk first?</a></div>'
+  +'<ul class="pfeat"></ul>';
+ d.querySelector('.ptag').textContent=single?'One plan':'Plan';
+ d.querySelector('h3').textContent=nameOf(p);
+ d.querySelector('.psub').textContent=blurbOf(p);
+ d.querySelector('.pamount').innerHTML=money(p.kind==='once'?(p.amount||0):(p.monthly||0))+' <span>'+(p.kind==='once'?'once-off':'per month')+'</span>';
+ d.querySelector('.pnote').textContent=up;
+ var btn=d.querySelector('.pbtn');
+ btn.textContent=(single?'Subscribe':'Choose '+nameOf(p))+' \u2192';
  btn.addEventListener('click',function(){choose(p.id,true)});
- d.appendChild(btn);
+ var ul=d.querySelector('.pfeat');
+ var h=document.createElement('li');h.className='plus';h.textContent='Everything in Atlas:';ul.appendChild(h);
+ INCLUDED.forEach(function(t){var li=document.createElement('li');li.textContent=t;ul.appendChild(li)});
  return d;
 }
 
-function choose(id,scroll){
- sel=cat.products.filter(function(p){return p.id===id})[0];
- if(!sel)return;
+function buildOptions(){
+ var box=$('opts');box.innerHTML='';
+ cat.products.forEach(function(p){
+  var l=document.createElement('label');l.className='popt';l.dataset.id=p.id;
+  var i=document.createElement('input');i.type='radio';i.name='product';i.value=p.id;
+  i.addEventListener('change',function(){choose(p.id,false)});
+  var body=document.createElement('span');body.className='popt-body';
+  var top=document.createElement('span');top.className='popt-top';
+  var st=document.createElement('strong');st.textContent=nameOf(p);
+  var pr=document.createElement('span');pr.className='popt-price';pr.textContent=priceLine(p);
+  top.appendChild(st);top.appendChild(pr);
+  var bl=document.createElement('span');bl.className='popt-blurb';bl.textContent=blurbOf(p);
+  body.appendChild(top);body.appendChild(bl);
+  l.appendChild(i);l.appendChild(body);box.appendChild(l);
+ });
+}
+
+function refresh(){
+ var m=sel.kind==='monthly'?months:1;
+ document.querySelectorAll('.popt').forEach(function(x){var on=x.dataset.id===sel.id;x.classList.toggle('is-on',on);x.querySelector('input').checked=on});
+ document.querySelectorAll('#months label').forEach(function(x){x.classList.toggle('on',+x.dataset.m===months)});
+ $('sumWhat').textContent=nameOf(sel)+(sel.kind==='monthly'?' ('+m+' month'+(m===1?'':'s')+')':'');
+ var t=totalFor(sel,m);
+ $('sumTotal').textContent=money(t)+' USD';
+ $('payBtn').textContent='Pay '+money(t)+' securely';
+}
+
+/* The details form stays hidden until the visitor presses the plan's Subscribe button. */
+function choose(id,reveal){
+ var p=cat.products.filter(function(x){return x.id===id})[0];
+ if(!p)return;
+ sel=p;
  var c=choices(sel);
  months=c.indexOf(months)>-1?months:c[0];
- document.querySelectorAll('.card').forEach(function(x){x.classList.toggle('is-on',x.dataset.id===id)});
- $('checkout').hidden=false;
- $('fTitle').textContent='Your details: '+nameOf(sel);
- $('fSub').textContent='Step 2 of 2. Check the total, then you go to the secure payment page.';
+ document.querySelectorAll('.pcard').forEach(function(x){x.classList.toggle('is-on',x.dataset.id===id)});
  var box=$('monthsBox');
  if(sel.kind==='monthly'&&c.length>1){
   box.hidden=false;
   $('months').innerHTML='';
   c.forEach(function(m){
-   var l=document.createElement('label');if(m===months)l.className='on';
+   var l=document.createElement('label');l.dataset.m=m;
    var i=document.createElement('input');i.type='radio';i.name='months';i.value=m;i.checked=m===months;
-   i.addEventListener('change',function(){months=m;choose(id,false)});
+   i.addEventListener('change',function(){months=m;refresh()});
    var sp=document.createElement('span');sp.textContent=m===1?'1 month':m+' months';
    l.appendChild(i);l.appendChild(sp);$('months').appendChild(l);
   });
  }else box.hidden=true;
- var m=sel.kind==='monthly'?months:1;
- $('sumWhat').textContent=nameOf(sel)+(sel.kind==='monthly'?' ('+m+' month'+(m===1?'':'s')+')':'');
- var t=totalFor(sel,m);
- $('sumTotal').textContent=money(t)+' USD';
- $('payBtn').textContent='Pay '+money(t)+' securely';
  if(cat.pay_note)$('payNote').textContent=cat.pay_note+' Prices are in US dollars. We never see your card or wallet details.';
- if(scroll)$('checkout').scrollIntoView({behavior:'smooth',block:'start'});
+ refresh();
+ if(reveal){
+  $('checkout').hidden=false;
+  $('checkout').scrollIntoView({behavior:'smooth',block:'start'});
+  setTimeout(function(){$('fName').focus({preventScroll:true})},450);
+ }
 }
 
 function rootPayUrl(){
@@ -300,13 +435,11 @@ fetch(API+'/pay/products',{cache:'no-store'}).then(function(r){return r.ok?r.jso
   return;
  }
  cat.products=list;
- $('plansSub').textContent=list.length===1?'One plan with everything included. Enter your details, then pay on a secure page. Prices are in US dollars.':'Choose a plan, enter your details, then pay on a secure page. Prices are in US dollars.';
+ $('plansSub').textContent=list.length===1?'One plan with everything included. Press Subscribe, enter your details, then pay on a secure page. Prices are in US dollars.':'Choose a plan, enter your details, then pay on a secure page. Prices are in US dollars.';
  var g=$('cards');g.innerHTML='';
- g.className='grid'+(list.length===1?' one':'');
- list.forEach(function(p){g.appendChild(card(p))});
- var want=new URLSearchParams(location.search).get('plan');
- if(want)choose(want,false);
- else if(list.length===1)choose(list[0].id,false);
+ g.className='pgrid'+(list.length===1?' one':'');
+ list.forEach(function(p){g.appendChild(card(p,list.length===1))});
+ buildOptions();
 }).catch(function(){
  showNone('<b>We could not load the plans right now.</b> Atlas is free during the pilot. To pay early, <a href="https://wa.me/263787412809">WhatsApp us</a> or try again in a minute.');
 });

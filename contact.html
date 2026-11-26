@@ -122,13 +122,60 @@ a.sc-card:hover{border-color:var(--navy-3);transform:translateY(-1px)}
 @media(prefers-reduced-motion:reduce){#help details p{animation:none}#help summary::before,#help summary::after{transition:none}}
 #help h2.sec{padding:0}
 #help{padding-top:96px}
+
+/* Sticky nav: the bar stays on screen while scrolling. A spacer keeps the page layout where it was. */
+html{scroll-padding-top:104px}
+.top::before{content:"";display:block;height:88px}
+.bar{position:fixed;top:16px;left:50%;transform:translateX(-50%);width:min(1080px,calc(100% - 48px));max-width:none;margin:0;z-index:100;box-shadow:0 10px 30px -14px rgba(11,31,58,.28)}
+@media(max-width:820px){.top::before{height:80px}.bar{top:10px;width:calc(100% - 20px);margin:0}html{scroll-padding-top:92px}}
+
+.cwrap{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch}.cform textarea{min-height:96px}
+.cimg{margin:0;border-radius:20px;overflow:hidden;background:#090909;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:0 2px 28px rgba(11,31,58,.12)}
+.cimg img{display:block;width:100%;height:auto}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:28px}
+@media(max-width:1000px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:900px){.cwrap{grid-template-columns:minmax(0,1fr)}.cimg{order:2}}
+@media(max-width:560px){.cards{grid-template-columns:minmax(0,1fr)}}
+
+/* Wide dark panel on the left, like the Atlas sign-in screen */
+.wrap.wide{max-width:1280px;padding:0 28px}
+.cwrap{grid-template-columns:minmax(0,2fr) minmax(0,3fr);gap:28px;align-items:stretch}
+.cimg{position:relative;display:block;min-height:560px;border-radius:22px;overflow:hidden;background:#0b0f18;box-shadow:0 24px 60px -24px rgba(11,31,58,.45)}
+.cimg .cbg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:74% 50%}
+.cshade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,12,24,.10) 0%,rgba(7,12,24,0) 40%,rgba(7,12,24,.35) 100%)}
+@media(max-width:900px){.wrap.wide{padding:0 20px}.cwrap{grid-template-columns:minmax(0,1fr)}.cimg{order:2;min-height:300px}}
+/* Site footer */
+footer.sf{position:relative;background:#0b1f3a;border-top:0;color:#a9bbd6;font-size:15px;line-height:1.6;padding:64px 0 28px}
+footer.sf:before{display:none}
+footer.sf .sf-in{max-width:1280px;margin:0 auto;padding:0 48px}
+footer.sf .sf-top{display:grid;grid-template-columns:1.7fr 1fr 1fr 1.1fr;gap:40px 48px}
+footer.sf .fbrandlink{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
+footer.sf .flogo{height:34px;width:auto;display:block;filter:brightness(0) invert(1)}
+footer.sf .fbrand{color:#fff;font-weight:700;font-size:18px}
+footer.sf .sf-about p{margin:18px 0 0;max-width:30em;color:#a9bbd6}
+footer.sf .sf-social{display:flex;gap:12px;margin-top:24px}
+footer.sf .sf-social a{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;text-decoration:none;transition:background .15s,color .15s,transform .15s}
+footer.sf .sf-social a:hover{background:#fff;color:#0b1f3a;transform:translateY(-2px)}
+footer.sf .sf-social svg{width:20px;height:20px}
+footer.sf .sf-col h4{margin:0 0 16px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#fff;font-weight:600}
+footer.sf .sf-col a{display:block;color:#c4d1e6;text-decoration:none;padding:5px 0}
+footer.sf .sf-col a:hover{color:#fff;text-decoration:underline}
+footer.sf .sf-col p{margin:0;padding:5px 0;color:#c4d1e6}
+footer.sf a:focus-visible{outline:3px solid #a9bbd6;outline-offset:3px;border-radius:6px}
+footer.sf .sf-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px 32px;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.16);font-size:14px;color:#a9bbd6}
+footer.sf .sf-legal{display:flex;gap:24px}
+footer.sf .sf-legal a{color:#c4d1e6;text-decoration:none}
+footer.sf .sf-legal a:hover{color:#fff;text-decoration:underline}
+@media(max-width:900px){footer.sf .sf-top{grid-template-columns:1fr 1fr}footer.sf .sf-about{grid-column:1/-1}}
+@media(max-width:820px){footer.sf{padding:48px 0 24px}footer.sf .sf-in{padding:0 20px}}
+@media(max-width:480px){footer.sf .sf-top{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="top">
 <header class="bar">
  <a class="brand" href="index.html"><img src="icon.png" alt="">Atlas</a>
- <nav class="links" aria-label="Main"><a href="index.html#who">Who it&rsquo;s for</a><a href="pricing.html">Pricing</a><a href="index.html#install">Install</a><a href="contact.html#help">Help</a><a href="contact.html" aria-current="page">Contact</a></nav>
+ <nav class="links" aria-label="Main"><a href="index.html#who">Who it&rsquo;s for</a><a href="pricing.html">Pricing</a><a href="index.html#install">Install</a><a href="contact.html#help">FAQ</a><a href="contact.html" aria-current="page">Contact</a></nav>
  <a class="nbtn" data-dl href="index.html#install"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3v10m0 0l-4-4m4 4l4-4M4 17h12"/></svg>Download</a>
 </header>
 <div class="hero">
@@ -138,8 +185,12 @@ a.sc-card:hover{border-color:var(--navy-3);transform:translateY(-1px)}
 </div>
 
 <main>
-<div class="wrap">
+<div class="wrap wide">
  <div class="cwrap">
+  <figure class="cimg">
+   <img class="cbg" src="images/contact-dart.jpg" alt="" width="736" height="736">
+   <div class="cshade" aria-hidden="true"></div>
+  </figure>
   <div class="cform" id="formBox">
    <h2>Send us a message</h2>
    <p class="fine" style="margin:0">We reply on weekdays, usually within one working day. For anything urgent, use WhatsApp.</p>
@@ -163,30 +214,62 @@ a.sc-card:hover{border-color:var(--navy-3);transform:translateY(-1px)}
    </form>
   </div>
 
-  <div class="side">
+ </div>
+ <div class="cards">
    <a class="sc-card" href="https://wa.me/263787412809"><h3>WhatsApp</h3><span class="v">+263 787 412 809</span><p>Quick questions and screenshots are easiest here.</p></a>
    <a class="sc-card" href="mailto:support@invitt.co.zw"><h3>Email</h3><span class="v">support@invitt.co.zw</span><p>Best for install problems, licence codes and detailed feedback.</p></a>
    <a class="sc-card" href="Atlas-Pilot-Guide.pdf"><h3>Pilot guide</h3><span class="v">Read the PDF</span><p>Step by step help for setting up and using Atlas.</p></a>
    <div class="sc-card"><h3>Based in</h3><span class="v">Harare, Zimbabwe</span><p>Invitt Digital &middot; <a href="https://invitt.co.zw">invitt.co.zw</a></p></div>
-   <div class="tipbox"><b>To help us fix things faster, include:</b>
-    <ul><li>Your Atlas version</li><li>What you were doing when the problem happened</li><li>A screenshot of any error message (send it on WhatsApp)</li></ul></div>
-  </div>
  </div>
+<div class="tipbox" style="margin-top:16px"><b>To help us fix things faster, include:</b>
+    <ul><li>Your Atlas version</li><li>What you were doing when the problem happened</li><li>A screenshot of any error message (send it on WhatsApp)</li></ul></div>
 </div>
 <div class="wrap">
 <section id="help">
  <h2 class="sec">Good questions.<br>Straightforward answers.</h2>
- <div class="fq"><details><summary>What can I manage with Atlas?</summary><p>Quotations, invoices, receipts, clients and your books, with ZIMRA dates and tax estimates alongside. Everything is saved on your own computer.</p></details><details><summary>Can I see a returning client’s history?</summary><p>Yes. Open a client and see their quotations, invoices, payments and what is still owed, all in one place.</p></details><details><summary>Can I keep track of unpaid invoices?</summary><p>Yes. Atlas shows who still owes you and lets you record each payment against its invoice.</p></details><details><summary>Can my team use it too?</summary><p>Atlas runs on one Windows computer for now. Team access is not part of this pilot.</p></details><details><summary>How do I get started?</summary><p>Download Atlas, run the installer, then enter your company details and the 6-digit code we email you. It takes about two minutes. See <a href="#install">Install in three steps</a>.</p></details><details><summary>Is my data sent anywhere?</summary><p>No. Your records are saved on your computer. Only the licence check talks to Invitt, and it sends no business records.</p></details><details><summary>How do I get a new version?</summary><p>Atlas tells you when a new version is ready. Press Download, run the new installer, and your records stay as they are. You can also check in Settings, under About.</p></details><details><summary>Does it work on Mac or phone?</summary><p>Not yet. This pilot is for Windows 10 and 11 only.</p></details><details><summary>I need help or want to give feedback</summary><p>Email <a href="mailto:support@invitt.co.zw">support@invitt.co.zw</a> or WhatsApp <a href="https://wa.me/263787412809">+263 787 412 809</a>. You can also read the <a href="Atlas-Pilot-Guide.pdf">pilot guide (PDF)</a>.</p></details></div>
+ <div class="fq"><details><summary>What can I manage with Atlas?</summary><p>Quotations, invoices, receipts, clients and your books, with ZIMRA dates and tax estimates alongside. Everything is saved on your own computer.</p></details><details><summary>Can I see a returning client’s history?</summary><p>Yes. Open a client and see their quotations, invoices, payments and what is still owed, all in one place.</p></details><details><summary>Can I keep track of unpaid invoices?</summary><p>Yes. Atlas shows who still owes you and lets you record each payment against its invoice.</p></details><details><summary>Can my team use it too?</summary><p>Atlas runs on one Windows computer for now. Team access is not part of this pilot.</p></details><details><summary>How do I get started?</summary><p>Download Atlas, run the installer, then enter your company details and the 6-digit code we email you. It takes about two minutes. See <a href="index.html#install">Install in three steps</a>.</p></details><details><summary>Is my data sent anywhere?</summary><p>No. Your records are saved on your computer. Only the licence check talks to Invitt, and it sends no business records.</p></details><details><summary>How do I get a new version?</summary><p>Atlas tells you when a new version is ready. Press Download, run the new installer, and your records stay as they are. You can also check in Settings, under About.</p></details><details><summary>Does it work on Mac or phone?</summary><p>Not yet. This pilot is for Windows 10 and 11 only.</p></details><details><summary>I need help or want to give feedback</summary><p>Email <a href="mailto:support@invitt.co.zw">support@invitt.co.zw</a> or WhatsApp <a href="https://wa.me/263787412809">+263 787 412 809</a>. You can also read the <a href="Atlas-Pilot-Guide.pdf">pilot guide (PDF)</a>.</p></details></div>
  <p class="fq-more">Something else on your mind?<a href="#formBox">Send us a message <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></a></p>
 </section>
 </div>
 </main>
 
-<footer>
- <div class="wrap">
-  <a class="fbrandlink" href="index.html"><img class="flogo" src="ATLAS-Logo.svg" alt="Atlas"><strong class="fbrand">Invitt Digital</strong></a>
-  <nav class="flinks" aria-label="Legal"><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></nav>
-  <span>&copy; 2026 Invitt Digital (Private) Limited, Harare, Zimbabwe</span>
+<footer class="sf">
+ <div class="sf-in">
+  <div class="sf-top">
+   <div class="sf-about">
+    <a class="fbrandlink" href="index.html"><img class="flogo" src="ATLAS-Logo.svg" alt="Atlas"><strong class="fbrand">Invitt Digital</strong></a>
+    <p>Quotations, invoices, receipts, clients and your books for Zimbabwe businesses, with ZIMRA dates and tax estimates alongside. Everything stays on your own computer.</p>
+    <div class="sf-social">
+     <a href="https://www.facebook.com/profile.php?id=61575425931711" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+     <a href="https://www.instagram.com/invitt_co" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+     <a href="https://www.linkedin.com/company/145371841" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+    </div>
+   </div>
+   <nav class="sf-col" aria-label="Atlas">
+    <h4>Atlas</h4>
+    <a href="index.html#who">Who it&rsquo;s for</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="index.html#install">Install</a>
+    <a href="contact.html#help">FAQ</a>
+   </nav>
+   <nav class="sf-col" aria-label="Support">
+    <h4>Support</h4>
+    <a href="contact.html">Contact</a>
+    <a href="Atlas-Pilot-Guide.pdf">Pilot guide (PDF)</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="privacy.html">Privacy Policy</a>
+   </nav>
+   <div class="sf-col">
+    <h4>Get in Touch</h4>
+    <a href="https://wa.me/263787412809">WhatsApp</a>
+    <a href="mailto:support@invitt.co.zw">support@invitt.co.zw</a>
+    <p>Harare, Zimbabwe</p>
+   </div>
+  </div>
+  <div class="sf-bottom">
+   <span>&copy; 2026 Invitt Digital (Private) Limited, Harare, Zimbabwe</span>
+   <span class="sf-legal"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></span>
+  </div>
  </div>
 </footer>
 
