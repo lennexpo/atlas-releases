@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Install Atlas on Windows | Atlas by Invitt Digital</title>
+<meta name="description" content="How to install Atlas on Windows in three steps: download, run the installer, then enter the 6-digit code we email you. Takes about two minutes.">
+<link rel="icon" href="icon.png">
+<style>
+@font-face{font-family:'IBM Plex Sans';font-weight:400;src:url(fonts/ibm-plex-sans-latin-400-normal.woff2) format('woff2');font-display:swap}
+@font-face{font-family:'IBM Plex Sans';font-weight:600;src:url(fonts/ibm-plex-sans-latin-600-normal.woff2) format('woff2');font-display:swap}
+@font-face{font-family:'IBM Plex Sans';font-weight:700;src:url(fonts/ibm-plex-sans-latin-700-normal.woff2) format('woff2');font-display:swap}
+:root{color-scheme:light;--navy:#0b1f3a;--navy-2:#16365e;--navy-3:#27507f;--soft:#a9bbd6;--white:#fff;--paper:#f5f8fc;--line:#dde5f0;--tx:#14233a;--mu:#5b6b82;--ok:#12805c;--bad:#b3261e;--sans:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--white);color:var(--tx);font:400 15px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--navy-3)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.top{margin:12px;border-radius:22px;background:radial-gradient(ellipse 60% 42% at 50% 0%,rgba(39,80,127,.09),transparent 72%),#f3f6fb;border:1px solid var(--line);overflow:hidden;padding-bottom:56px}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1080px;margin:20px auto 0;padding:10px 12px 10px 20px;background:#fff;border:1px solid var(--line);border-radius:14px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16.4px;color:var(--navy);text-decoration:none}
+.brand img{width:30px;height:30px;border-radius:7px}
+.links{display:flex;align-items:center;gap:34px}
+.links a{font-size:15px;color:var(--tx);text-decoration:none}.links a:hover,.links a[aria-current]{color:var(--navy-3)}
+.nbtn,.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--navy);color:#fff;text-decoration:none;font:600 15px/1.2 var(--sans);padding:12px 20px;border-radius:9px;border:0;cursor:pointer;transition:background .15s,transform .1s}
+.nbtn:hover,.btn:hover{background:var(--navy-2)}.nbtn:active,.btn:active{transform:scale(.98)}
+.btn[disabled]{opacity:.6;cursor:default}
+.btn.line{background:#fff;color:var(--navy);border:1px solid var(--navy)}.btn.line:hover{background:var(--paper)}
+.nbtn svg{width:18px;height:18px}
+.nbtn:focus-visible,.btn:focus-visible,input:focus-visible,label:focus-within{outline:3px solid var(--navy-3);outline-offset:2px}
+.hero{text-align:center;max-width:760px;margin:0 auto;padding:56px 24px 0}
+h1{font:700 clamp(32px,4.4vw,48px)/1.08 var(--sans);color:#06152b;margin:0 0 16px;letter-spacing:-.025em;text-wrap:balance}
+.lead{font-size:17px;line-height:1.55;color:#2f3f57;max-width:560px;margin:0 auto;text-wrap:balance}
+main{padding-bottom:24px}
+.sec{padding:64px 0 0}
+.sec h2{font:700 clamp(24px,3vw,30px)/1.15 var(--sans);color:var(--navy);margin:0 0 10px;letter-spacing:-.02em;text-wrap:balance}
+.sec>.wrap>p.sub{color:var(--mu);margin:0 0 28px;max-width:600px}
+.pilot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;background:var(--navy);color:#fff;border-radius:24px;padding:36px 40px;margin-top:-28px;position:relative}
+.pilot .eb{margin:0 0 8px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+.pilot h2{color:#fff;margin:0 0 8px;font-size:26px}
+.pilot p{margin:0;color:#d4deed;max-width:520px}
+.pilot .btn{background:#fff;color:var(--navy)}.pilot .btn:hover{background:#e9eff8}
+footer{position:relative;background:var(--white);color:var(--mu);font-size:14px;padding:28px 0 36px;margin-top:72px}
+footer:before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:min(1280px,calc(100% - 96px));height:2px;background:linear-gradient(90deg,transparent,var(--navy) 50%,transparent);opacity:.4}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px 40px;flex-wrap:wrap;max-width:1280px;padding:0 48px}
+footer a{color:var(--navy)}
+.fbrandlink{display:flex;align-items:center;gap:10px;text-decoration:none}.flogo{height:30px;width:auto;display:block}.fbrand{color:var(--navy);font-weight:700}
+.flinks{margin-left:auto;display:flex;gap:24px}
+@media(max-width:820px){.links{display:none}.top{margin:8px;border-radius:18px}.bar{width:calc(100% - 24px);margin-top:12px}.hero{padding-top:40px}.pilot{padding:28px 24px;border-radius:20px}.fields{grid-template-columns:1fr}footer .wrap{padding:0 20px}.flinks{margin-left:0}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* Sticky nav: the bar stays on screen while scrolling. A spacer keeps the page layout where it was. */
+html{scroll-padding-top:104px}
+.top::before{content:"";display:block;height:88px}
+.bar{position:fixed;top:16px;left:50%;transform:translateX(-50%);width:min(1080px,calc(100% - 48px));max-width:none;margin:0;z-index:100;box-shadow:0 10px 30px -14px rgba(11,31,58,.28)}
+@media(max-width:820px){.top::before{height:80px}.bar{top:10px;width:calc(100% - 20px);margin:0}html{scroll-padding-top:92px}}
+/* Site footer */
+footer.sf{position:relative;background:#0b1f3a;border-top:0;color:#a9bbd6;font-size:15px;line-height:1.6;padding:64px 0 28px}
+footer.sf:before{display:none}
+footer.sf .sf-in{max-width:1280px;margin:0 auto;padding:0 48px}
+footer.sf .sf-top{display:grid;grid-template-columns:1.7fr 1fr 1fr 1.1fr;gap:40px 48px}
+footer.sf .fbrandlink{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
+footer.sf .flogo{height:34px;width:auto;display:block;filter:brightness(0) invert(1)}
+footer.sf .fbrand{color:#fff;font-weight:700;font-size:18px}
+footer.sf .sf-about p{margin:18px 0 0;max-width:30em;color:#a9bbd6}
+footer.sf .sf-social{display:flex;gap:12px;margin-top:24px}
+footer.sf .sf-social a{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;text-decoration:none;transition:background .15s,color .15s,transform .15s}
+footer.sf .sf-social a:hover{background:#fff;color:#0b1f3a;transform:translateY(-2px)}
+footer.sf .sf-social svg{width:20px;height:20px}
+footer.sf .sf-col h4{margin:0 0 16px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#fff;font-weight:600}
+footer.sf .sf-col a{display:block;color:#c4d1e6;text-decoration:none;padding:5px 0}
+footer.sf .sf-col a:hover{color:#fff;text-decoration:underline}
+footer.sf .sf-col p{margin:0;padding:5px 0;color:#c4d1e6}
+footer.sf a:focus-visible{outline:3px solid #a9bbd6;outline-offset:3px;border-radius:6px}
+footer.sf .sf-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px 32px;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.16);font-size:14px;color:#a9bbd6}
+footer.sf .sf-legal{display:flex;gap:24px}
+footer.sf .sf-legal a{color:#c4d1e6;text-decoration:none}
+footer.sf .sf-legal a:hover{color:#fff;text-decoration:underline}
+@media(max-width:900px){footer.sf .sf-top{grid-template-columns:1fr 1fr}footer.sf .sf-about{grid-column:1/-1}}
+@media(max-width:820px){footer.sf{padding:48px 0 24px}footer.sf .sf-in{padding:0 20px}}
+@media(max-width:480px){footer.sf .sf-top{grid-template-columns:1fr}}
+
+/* Install page */
+.top{padding-bottom:64px}
+.hero{max-width:820px}
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;margin-top:28px;background:var(--navy);color:#fff;text-decoration:none;font:700 17px/1.2 var(--sans);padding:17px 30px;border-radius:12px;box-shadow:0 14px 30px -16px rgba(11,31,58,.6);transition:background .15s,transform .15s}
+.cta:hover{background:var(--navy-2)}.cta:active{transform:scale(.98)}
+.cta svg{width:20px;height:20px;flex:none}
+.cta:focus-visible{outline:3px solid var(--navy-3);outline-offset:3px}
+.hmeta{margin:14px 0 0;font-size:14px;color:var(--mu)}
+.reqs{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:30px auto 0;padding:0;list-style:none;max-width:900px}
+.reqs li{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:14px;font-weight:500;color:var(--tx)}
+.reqs svg{width:16px;height:16px;color:var(--ok);flex:none}
+.isteps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;counter-reset:s;margin-top:30px}
+.istep{position:relative;counter-increment:s;background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 26px 28px;box-shadow:0 2px 28px rgba(11,31,58,.05)}
+.istep:before{content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;font-size:17px;margin-bottom:18px}
+.istep h3{margin:0 0 8px;font-size:19px;line-height:1.25;color:var(--navy)}
+.istep p{margin:0;color:var(--mu);font-size:15.5px;line-height:1.6}
+.istep b{color:var(--navy)}
+.fq{margin-top:26px}
+.fq details{border-top:1px solid var(--line)}.fq details:last-child{border-bottom:1px solid var(--line)}
+.fq summary{cursor:pointer;font-weight:600;color:var(--navy);padding:20px 0;list-style:none}
+.fq summary::-webkit-details-marker{display:none}
+.fq summary::after{content:"+";float:right;font-size:22px;line-height:1;color:var(--mu)}
+.fq details[open] summary::after{content:"\2212"}
+.fq p{margin:0 0 20px;color:var(--mu);max-width:720px}
+.fq p a{color:var(--navy)}
+.pilot{margin-top:0}
+.pilot .acts{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
+.pilot .acts a.tx{color:#d4deed;font-weight:500}
+.pilot .acts a.tx:hover{color:#fff}
+/* Hero picture as the background of the top block */
+.top{position:relative;background:#f5f2ed;padding-bottom:340px}
+.bbg{position:absolute;z-index:0;left:0;right:0;bottom:0;height:320px;background:url(images/install-brand.jpg) center bottom/auto 100% no-repeat;pointer-events:none}
+.hero{position:relative;z-index:1}
+@media(min-width:1200px){
+ .top{min-height:600px;padding-bottom:56px}
+ .bbg{left:auto;top:0;height:auto;width:min(56%,700px);background-position:right center;background-size:auto 100%}
+ .hero{max-width:1080px;text-align:left;padding:48px 56px 0}
+ .hero h1,.hero .lead{max-width:470px}
+ .hero .lead{margin-left:0;margin-right:0}
+ .hero .cta{margin-top:26px}
+ .hmeta{margin-top:12px}
+ .reqs{justify-content:flex-start;margin-left:0;max-width:470px}
+}
+@media(max-width:820px){.isteps{grid-template-columns:1fr}.cta{width:100%}.top{padding-bottom:300px}.bbg{height:280px}}
+</style>
+</head>
+<body>
+<div class="top">
+<div class="bbg" aria-hidden="true"></div>
+<header class="bar">
+ <a class="brand" href="index.html"><img src="icon.png" alt="">Atlas</a>
+ <nav class="links" aria-label="Main"><a href="index.html#who">Who it&rsquo;s for</a><a href="pricing.html">Pricing</a><a href="install.html" aria-current="page">Install</a><a href="contact.html#help">FAQ</a><a href="contact.html">Contact</a></nav>
+ <a class="nbtn" data-dl href="https://github.com/lennexpo/atlas-releases/releases/download/v0.1.1/Atlas-Setup-0.1.1.exe" download><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3v10m0 0l-4-4m4 4l4-4M4 17h12"/></svg>Download</a>
+</header>
+<div class="hero">
+ <h1>Install Atlas on Windows.</h1>
+ <p class="lead">Three steps and about two minutes. Download, run the installer, then enter the code we email you.</p>
+ <a class="cta" id="dl" data-dl href="https://github.com/lennexpo/atlas-releases/releases/download/v0.1.1/Atlas-Setup-0.1.1.exe" download><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3v10m0 0l-4-4m4 4l4-4M4 17h12"/></svg><span id="dlText">Download Atlas for Windows</span></a>
+ <p class="hmeta" id="dlMeta">Windows 10 or 11 | 64-bit</p>
+ <ul class="reqs" aria-label="What you need">
+  <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Windows 10 or 11</li>
+  <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>About two minutes</li>
+  <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Internet to get your first code</li>
+  <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Works offline after that</li>
+ </ul>
+</div>
+</div>
+
+<main>
+<section class="sec" id="steps" aria-labelledby="stH">
+ <div class="wrap">
+  <h2 id="stH">Install in three steps</h2>
+  <p class="sub">It takes about two minutes.</p>
+  <div class="isteps">
+   <div class="istep"><h3>Download</h3><p>Press the Download button above and wait for <b>Atlas-Setup</b> to finish.</p></div>
+   <div class="istep"><h3>Run the installer</h3><p>Open the file and follow the prompts until the installer finishes.</p></div>
+   <div class="istep"><h3>Set up and start</h3><p>Enter your company details and email. We send you a 6-digit code. Type it in and Atlas is ready.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="help" aria-labelledby="hH">
+ <div class="wrap">
+  <h2 id="hH">If something does not go to plan</h2>
+  <div class="fq">
+   <details><summary>My 6-digit code did not arrive.</summary><p>Check the email address you typed, then look in your spam or junk folder. The message comes from <b>atlas@mail.invitt.co.zw</b>. A code works once and for 10 minutes. If it has expired, wait a minute and ask Atlas for a new one. Still nothing? <a href="contact.html">Contact us</a> and we will sort it out.</p></details>
+   <details><summary>Do I need the internet to use Atlas?</summary><p>You need it once, to get your code. After that Atlas keeps working without internet. It checks in quietly about once a week, and allows up to 14 days without a connection.</p></details>
+   <details><summary>Can I install Atlas on another computer, or reinstall it?</summary><p>Yes. Sign up with the same email and you get the same licence and the same end date, so there is no second trial. Your records stay on the computer where you made them, so back them up in Atlas before you move.</p></details>
+   <details><summary>How do I update Atlas?</summary><p>When a newer version is out, Atlas shows a card with a Download button. Download it, run the installer, and your records are kept.</p></details>
+   <details><summary>Is there a printed guide?</summary><p>Yes. The <a href="Atlas-Pilot-Guide.pdf">pilot guide (PDF)</a> covers installing, your first 15 minutes, backups and who to contact.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="sec" aria-label="Download Atlas">
+ <div class="wrap">
+  <div class="pilot">
+   <div>
+    <p class="eb">Free during the pilot</p>
+    <h2>Ready to install Atlas?</h2>
+    <p>One installer for your invoices, clients, staff and books. Your records stay on your own computer.</p>
+   </div>
+   <div class="acts">
+    <a class="btn" data-dl href="https://github.com/lennexpo/atlas-releases/releases/download/v0.1.1/Atlas-Setup-0.1.1.exe" download>Download Atlas for Windows</a>
+    <a class="tx" href="pricing.html">See pricing</a>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer class="sf">
+ <div class="sf-in">
+  <div class="sf-top">
+   <div class="sf-about">
+    <a class="fbrandlink" href="index.html"><img class="flogo" src="ATLAS-Logo.svg" alt="Atlas"><strong class="fbrand">Invitt Digital</strong></a>
+    <p>Quotations, invoices, receipts, clients and your books for Zimbabwe businesses, with ZIMRA dates and tax estimates alongside. Everything stays on your own computer.</p>
+    <div class="sf-social">
+     <a href="https://www.facebook.com/profile.php?id=61575425931711" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+     <a href="https://www.instagram.com/invitt_co" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+     <a href="https://www.linkedin.com/company/145371841" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+    </div>
+   </div>
+   <nav class="sf-col" aria-label="Atlas">
+    <h4>Atlas</h4>
+    <a href="index.html#who">Who it&rsquo;s for</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="install.html">Install</a>
+    <a href="contact.html#help">FAQ</a>
+   </nav>
+   <nav class="sf-col" aria-label="Support">
+    <h4>Support</h4>
+    <a href="contact.html">Contact</a>
+    <a href="Atlas-Pilot-Guide.pdf">Pilot guide (PDF)</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="privacy.html">Privacy Policy</a>
+   </nav>
+   <div class="sf-col">
+    <h4>Get in Touch</h4>
+    <a href="https://wa.me/263787412809">WhatsApp</a>
+    <a href="mailto:support@invitt.co.zw">support@invitt.co.zw</a>
+    <p>Harare, Zimbabwe</p>
+   </div>
+  </div>
+  <div class="sf-bottom">
+   <span>&copy; 2026 Invitt Digital (Private) Limited, Harare, Zimbabwe</span>
+   <span class="sf-legal"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></span>
+  </div>
+ </div>
+</footer>
+
+<script>
+/* The button and version come from version.json, the same file the Atlas app checks for updates. */
+fetch('version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.json()}).then(function(v){
+ if(!v||!v.version||!v.file)return;
+ document.querySelectorAll('[data-dl]').forEach(function(a){a.href=v.file;a.setAttribute('download','')});
+}).catch(function(){});
+</script>
+</body>
+</html>
