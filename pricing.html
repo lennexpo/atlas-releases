@@ -40,6 +40,7 @@ main{padding-bottom:24px}
 .pilot p{margin:0;color:#d4deed;max-width:520px}
 .pilot .btn{background:#fff;color:var(--navy)}.pilot .btn:hover{background:#e9eff8}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.grid.one{grid-template-columns:minmax(0,440px)}
 .card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:0 2px 28px rgba(11,31,58,.05)}
 .card.is-on{border-color:var(--navy);box-shadow:0 0 0 1px var(--navy),0 2px 28px rgba(11,31,58,.08)}
 .card h3{margin:0 0 6px;font-size:19px;color:var(--navy)}
@@ -111,7 +112,7 @@ footer a{color:var(--navy)}
 
 <section class="sec" id="plans">
  <div class="wrap">
-  <h2>Paid plans</h2>
+  <h2>Atlas plan</h2>
   <p class="sub" id="plansSub">Loading current prices...</p>
   <div class="grid" id="cards" aria-live="polite"></div>
   <div class="note" id="none" hidden></div>
@@ -180,9 +181,9 @@ var API = 'https://tess.invitt.co.zw';
 var ROOT_PAY = 'https://invitt.co.zw/pay';
 var PREFIX = 'atlas';
 
-var COPY = {};
-/* Optional display wording by product id, for example:
-   COPY['atlas-monthly'] = {name:'Atlas Monthly', blurb:'Pay month to month.'}; */
+var COPY = {
+ atlas:{name:'Atlas',blurb:'The full Atlas for your business: invoicing, clients, staff, ZIMRA and books. One plan, nothing extra to buy.'}
+};
 
 var CHECK = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>';
 var INCLUDED = ['Invoices, quotations, receipts and credit notes','Client records and statements','Payments recorded against each invoice','ZIMRA dates and taxes','Staff, payroll and PAYE','Books and accounting reports','Tasks and reminders','Automatic daily backup','Your data stays on your own computer','Updates as they are released'];
@@ -219,7 +220,7 @@ function card(p){
  var s=document.createElement('p');
  s.textContent=p.kind==='once'?'One payment.':'Pay for as many months as you like, up front.';
  d.appendChild(s);
- var btn=document.createElement('button');btn.type='button';btn.className='btn';btn.textContent='Choose '+nameOf(p);
+ var btn=document.createElement('button');btn.type='button';btn.className='btn';btn.textContent=cat.products.length===1?'Subscribe':'Choose '+nameOf(p);
  btn.addEventListener('click',function(){choose(p.id,true)});
  d.appendChild(btn);
  return d;
@@ -299,11 +300,13 @@ fetch(API+'/pay/products',{cache:'no-store'}).then(function(r){return r.ok?r.jso
   return;
  }
  cat.products=list;
- $('plansSub').textContent='Choose a plan, enter your details, then pay on a secure page. Prices are in US dollars.';
+ $('plansSub').textContent=list.length===1?'One plan with everything included. Enter your details, then pay on a secure page. Prices are in US dollars.':'Choose a plan, enter your details, then pay on a secure page. Prices are in US dollars.';
  var g=$('cards');g.innerHTML='';
+ g.className='grid'+(list.length===1?' one':'');
  list.forEach(function(p){g.appendChild(card(p))});
  var want=new URLSearchParams(location.search).get('plan');
  if(want)choose(want,false);
+ else if(list.length===1)choose(list[0].id,false);
 }).catch(function(){
  showNone('<b>We could not load the plans right now.</b> Atlas is free during the pilot. To pay early, <a href="https://wa.me/263787412809">WhatsApp us</a> or try again in a minute.');
 });
