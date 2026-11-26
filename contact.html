@@ -69,12 +69,6 @@ main{padding-bottom:24px}
 .sum strong{font-size:20px;color:var(--navy)}
 .err{color:var(--bad);margin:12px 0 0;font-weight:600}
 .fine{font-size:13.5px;color:var(--mu);margin:14px 0 0}
-.fq details{border-top:1px solid var(--line)}.fq details:last-child{border-bottom:1px solid var(--line)}
-.fq summary{cursor:pointer;font-weight:600;color:var(--navy);padding:20px 0;list-style:none}
-.fq summary::-webkit-details-marker{display:none}
-.fq summary::after{content:"+";float:right;font-size:22px;line-height:1;color:var(--mu)}
-.fq details[open] summary::after{content:"\2212"}
-.fq p{margin:0 0 20px;color:var(--mu);max-width:720px}
 footer{position:relative;background:var(--white);color:var(--mu);font-size:14px;padding:28px 0 36px;margin-top:72px}
 footer:before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:min(1280px,calc(100% - 96px));height:2px;background:linear-gradient(90deg,transparent,var(--navy) 50%,transparent);opacity:.4}
 footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px 40px;flex-wrap:wrap;max-width:1280px;padding:0 48px}
@@ -105,13 +99,36 @@ a.sc-card:hover{border-color:var(--navy-3);transform:translateY(-1px)}
 .done p{color:var(--mu);margin:0 0 20px}
 .cform .btn{width:100%;margin-top:6px}
 @media(max-width:900px){.cwrap{grid-template-columns:minmax(0,1fr)}.cform{padding:24px 20px}}
+#help{padding:112px 0 72px;max-width:1040px;margin:0 auto}
+#help h2.sec{font:700 clamp(26px,3vw,32px)/1.12 var(--sans);text-align:center;letter-spacing:-.02em;margin:0}
+#help .sub{display:none}
+.fq{margin:64px auto 0;max-width:820px;border-top:0}
+#help details{border-bottom:1px solid var(--line);padding:0}
+#help details:first-of-type{border-top:0}
+#help summary{position:relative;display:block;list-style:none;cursor:pointer;padding:32px 56px 32px 4px;font:400 15px/1.4 var(--sans);color:var(--tx)}
+#help summary::-webkit-details-marker{display:none}
+#help summary::before,#help summary::after{content:"";position:absolute;right:8px;top:50%;width:18px;height:1.8px;margin-top:-1px;background:var(--tx);transition:transform .25s ease,opacity .25s}
+#help summary::after{transform:rotate(90deg)}
+#help details[open] summary::after{transform:rotate(0);opacity:0}
+#help summary:hover{color:var(--navy)}
+#help summary:focus-visible{outline:3px solid var(--navy-3);outline-offset:-3px;border-radius:6px}
+#help details p{margin:0;padding:0 56px 30px 4px;font-size:15.5px;line-height:1.7;color:var(--mu);max-width:820px;animation:fqin .35s ease}
+#help details p a{color:var(--navy)}
+@keyframes fqin{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.fq-more{margin:44px 0 0;text-align:center;font-size:15.5px;color:var(--mu)}
+.fq-more a{display:inline-flex;align-items:center;gap:8px;margin-left:8px;color:var(--navy);font-weight:400;text-decoration:none;border-bottom:1.5px solid var(--navy)}
+.fq-more svg{width:14px;height:14px}
+@media(max-width:700px){#help{padding:72px 0 48px}.fq{margin-top:40px}#help summary{padding:24px 44px 24px 0}#help details p{padding:0 8px 24px 0;font-size:15.5px}}
+@media(prefers-reduced-motion:reduce){#help details p{animation:none}#help summary::before,#help summary::after{transition:none}}
+#help h2.sec{padding:0}
+#help{padding-top:96px}
 </style>
 </head>
 <body>
 <div class="top">
 <header class="bar">
  <a class="brand" href="index.html"><img src="icon.png" alt="">Atlas</a>
- <nav class="links" aria-label="Main"><a href="index.html#who">Who it&rsquo;s for</a><a href="pricing.html">Pricing</a><a href="index.html#install">Install</a><a href="index.html#help">Help</a><a href="contact.html" aria-current="page">Contact</a></nav>
+ <nav class="links" aria-label="Main"><a href="index.html#who">Who it&rsquo;s for</a><a href="pricing.html">Pricing</a><a href="index.html#install">Install</a><a href="contact.html#help">Help</a><a href="contact.html" aria-current="page">Contact</a></nav>
  <a class="nbtn" data-dl href="index.html#install"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3v10m0 0l-4-4m4 4l4-4M4 17h12"/></svg>Download</a>
 </header>
 <div class="hero">
@@ -155,6 +172,13 @@ a.sc-card:hover{border-color:var(--navy-3);transform:translateY(-1px)}
     <ul><li>Your Atlas version</li><li>What you were doing when the problem happened</li><li>A screenshot of any error message (send it on WhatsApp)</li></ul></div>
   </div>
  </div>
+</div>
+<div class="wrap">
+<section id="help">
+ <h2 class="sec">Good questions.<br>Straightforward answers.</h2>
+ <div class="fq"><details><summary>What can I manage with Atlas?</summary><p>Quotations, invoices, receipts, clients and your books, with ZIMRA dates and tax estimates alongside. Everything is saved on your own computer.</p></details><details><summary>Can I see a returning client’s history?</summary><p>Yes. Open a client and see their quotations, invoices, payments and what is still owed, all in one place.</p></details><details><summary>Can I keep track of unpaid invoices?</summary><p>Yes. Atlas shows who still owes you and lets you record each payment against its invoice.</p></details><details><summary>Can my team use it too?</summary><p>Atlas runs on one Windows computer for now. Team access is not part of this pilot.</p></details><details><summary>How do I get started?</summary><p>Download Atlas, run the installer, then enter your company details and the 6-digit code we email you. It takes about two minutes. See <a href="#install">Install in three steps</a>.</p></details><details><summary>Is my data sent anywhere?</summary><p>No. Your records are saved on your computer. Only the licence check talks to Invitt, and it sends no business records.</p></details><details><summary>How do I get a new version?</summary><p>Atlas tells you when a new version is ready. Press Download, run the new installer, and your records stay as they are. You can also check in Settings, under About.</p></details><details><summary>Does it work on Mac or phone?</summary><p>Not yet. This pilot is for Windows 10 and 11 only.</p></details><details><summary>I need help or want to give feedback</summary><p>Email <a href="mailto:support@invitt.co.zw">support@invitt.co.zw</a> or WhatsApp <a href="https://wa.me/263787412809">+263 787 412 809</a>. You can also read the <a href="Atlas-Pilot-Guide.pdf">pilot guide (PDF)</a>.</p></details></div>
+ <p class="fq-more">Something else on your mind?<a href="#formBox">Send us a message <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></a></p>
+</section>
 </div>
 </main>
 
